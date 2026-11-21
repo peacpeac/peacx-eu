@@ -1,0 +1,28 @@
+; ====================================================================
+; Cloudflare / Standard DNS Zone Template for: peacx.se (BACKUP REDIRECT DOMAIN)
+; Exported / Generated for PEACX AB (Malmö, Sweden)
+; ====================================================================
+
+$ORIGIN peacx.se.
+$TTL 3600
+
+; --------------------------------------------------------------------
+; 1. DUMMY WEB RECORDS (Required for Cloudflare Edge Redirect to work)
+; Point @ and www to dummy IP 192.0.2.1 with Cloudflare Proxy ENABLED (Orange Cloud)
+; Then configure Cloudflare Page Rule or Redirect Rule:
+; "https://*peacx.se/*" -> 301 Permanent Redirect -> "https://peacx.eu/$2"
+; --------------------------------------------------------------------
+@       IN  A       192.0.2.1
+www     IN  CNAME   peacx.se.
+
+; --------------------------------------------------------------------
+; 2. EMAIL ROUTING (FORWARD ALL @peacx.se TO @peacx.eu)
+; Cloudflare Email Routing catches all incoming mails to peacx.se
+; and sends them straight to your primary inbox or peter@peacx.eu
+; --------------------------------------------------------------------
+@       IN  MX  1   route1.mx.cloudflare.net.
+@       IN  MX  5   route2.mx.cloudflare.net.
+@       IN  MX  9   route3.mx.cloudflare.net.
+
+@       IN  TXT     "v=spf1 include:_spf.mx.cloudflare.net -all"
+_dmarc  IN  TXT     "v=DMARC1; p=reject; rua=mailto:admin@peacx.eu"
