@@ -1,4 +1,0 @@
-# Cloudflare Pages / Netlify Redirects
-https://www.peacx.eu/* https://peacx.eu/:splat 301!
-http://www.peacx.eu/* https://peacx.eu/:splat 301!
-http://peacx.eu/* https://peacx.eu/:splat 301!
