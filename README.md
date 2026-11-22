@@ -1,6 +1,6 @@
-# PEACX AB — Official Corporate Web & Infrastructure Repository
+# PeacX AB — Official Corporate Web & Infrastructure Repository
 
-Repository for the corporate web presence, DNS zone definitions, and infrastructure configuration for **PEACX AB** (`peacx.eu`).
+Repository for the corporate web presence, DNS zone definitions, and infrastructure configuration for **PeacX AB** (`peacx.eu`).
 
 ## Repository Structure
 
